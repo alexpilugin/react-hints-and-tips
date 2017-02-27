@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>A.P. My-React-Hints</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Alex Pilugin">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Disable browser cache -->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.19.0/babel.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="/static/css/main.9a0fe4f1.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+
+<div class="flex-row">
+<div class="col-1-3 preformatted">
+    <a href="https://facebook.github.io/react/"><b>FaceBook React</b></a>
+    <a href="https://zhenyong.github.io/react/docs/why-react.html"><b>zhenyong.github.io react</b></a>
+    <a href="https://github.com/facebookincubator/create-react-app/"><b>create-react-app</b></a>
+    <a href="https://react-bootstrap.github.io/"><b>React-Bootstrap</b></a>
+    <a href="https://github.com/facebook/react-devtools"><b>react-devtools Extension</b></a>
+    <a href="https://github.com/zalmoxisus/redux-devtools-extension"><b>Redux DevTools Extension</b></a> 
+</div>
+
+<div class="col-1-3 preformatted">
+    <a href="https://github.com/reactjs/react-redux"><b>react-redux</b></a>
+    <a href="http://redux.js.org"><b>redux.js.org</b></a>
+    <a href="https://github.com/ReactTraining/react-router"><b>react-router</b></a>
+    <a href="https://reacttraining.com/react-router/"><b>reacttraining.com/react-router</b></a>
+    <a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus"><b>React on ES6+ (comparison with ES5)</b></a>
+Tutorials:<a href="https://www.tutorialspoint.com/reactjs/index.htm"><b>tutorialspoint.com/reactjs</b></a>
+<a href="http://react.tips"><b>react.tips</b></a>
+<a href="https://egghead.io/courses/react-fundamentals"><b>egghead.io/courses/react-fundamentals</b></a>
+</div> 
+
+<div class="col-1-3 preformatted">  
+    <a href="https://github.com/github/fetch"><b>window.fetch polyfill</b></a> 
+    <a href="https://www.npmjs.com/package/uuid"><b>UUID library</b></a> 
+    <a href="http://modernizr.com"><b>modernizr.com</b></a> 
+    <a href="http://eslint.org"><b>eslint.org</b></a> 
+    <a href="https://visionmedia.github.io/superagent/"><b>Ajax SuperAgent (for standalone apps)</b></a>
+    <a href="https://github.com/socketio/socket.io"><b>github socket.io</b></a>
+    <a href="https://cdnjs.com/libraries/socket.io"><b>cdnjs socket.io</b></a>
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-2-3 preformatted">
+<a href="https://facebook.github.io/react/docs/installation.html"><b>Facebook: React installation</b></a>
+<a href="https://facebook.github.io/react/downloads/single-file-example.html"><b>Link to html-file example</b></a>
+
+<b>React standalone app (add these links to the head section:</b>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.js">&lt;/script>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.js">&lt;/script>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.19.0/babel.min.js">&lt;/script> 
+
+<b>and add reference to the script: </b>
+&lt;script type="text/babel" src="app-01.jsx">&lt;/script>
+
+<b>app-01.jsx</b>
+const App_01 = () => &lt;h2>Hello from App_01&lt;/h2>
+
+ReactDOM.render(
+  &lt;App_01 />,
+  document.getElementById('app-01')
+);
+</div>
+<!-- Here will be a first React Application -->
+<div id="app-01" class="col-1-3"></div>
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<b>ES5 stateless React component</b> 
+
+var Header = function(props) {
+    return ( &lt;h1> {props.headerText} &lt;/h1> )
+}  
+</div>
+
+<div class="col-half preformatted">
+<b>ES6+ functional stateless component</b> 
+<a href="https://facebook.github.io/react/docs/context.html"><b>facebook.github.io/react/docs/context.html</b></a>
+const Header = (props) => &lt;h2> {props.headerText} &lt;/h2>
+
+<b>stateless component with context</b>
+const ContextConsumer = (props, context) => (
+  &lt;div>{context.currentUser.name} &lt;/div>
+);
+ContextConsumer.contextTypes = {
+  currentUser: React.PropTypes.object
+};
+</div>
+</div>
+
+<div class="flex-row">
+
+<!-- Here will be a 2nd React Application -->
+<div id="app-02" class="col-1-3"></div>
+
+<div class="col-2-3 preformatted">
+<b>Use create-react-app</b>
+<a href="https://github.com/facebookincubator/create-react-app/"><b>https://github.com/facebookincubator/create-react-app/</b></a>
+            
+In Terminal:
+<b>$ npm install -g create-react-app</b> - install globally
+<b>$ create-react-app app-name</b>app-name - name of your app
+<b>$ cd my-app</b>Go into the project folder
+<b>$ npm start</b>Runs the app in development mode. 
+Open http://localhost:3000 to view it in the browser.
+<b>$ npm run build</b>- builds the app for production to the build folder.
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-2-3 preformatted">
+<b>Create simple Express.js app with React
+First step is install Node.js globally:</b>
+<a href="https://nodejs.org/en/"><b>https://nodejs.org</b>
+</a>Download the package and install it from the .pkg by following along the install wizard which will install both node and npm, npm is Node Package Manager which allows for installs of additional packages for node.js.
+
+Create folder for your application, using following commands in Terminal:
+<b>$ mkdir myapp</b>Note: most npm commands should be ran in your project directory.
+Go inside the folder:<b>$ cd myapp</b>
+
+Use the npm init command to create a package.json file for the application. 
+<b>$ npm init</b><br />
+
+<b>Installing packages with npm:</b>
+
+Installing expressjs:<a href="http://expressjs.com"><b>http://expressjs.com</b></a>
+Install Express in the application's folder with saving it in the dependencies list:
+<b>$ npm install express --save</b>
+
+Express application generator:<a href="https://expressjs.com/en/starter/generator.html">
+<b>It's possible to use Express application generator:</b></a><b>$ npm install express-generator -g</b>
+
+Install React with npm:
+<b>$ npm install --save react react-dom</b>
+
+Install Browserify globally:
+<b>$ npm install -g browserify</b>
+The -g flag makes npm install the package as global, meaning you get access to the browserify command from the command line. You may need to use sudo to run this.
+
+<a href="https://github.com/babel/babelify"><b>https://github.com/babel/babelify</b></a>
+Install the babelify package, which allows browserify to use babel to compile JSX code:
+<b>$ npm install --save babelify babel-preset-react babel-preset-es2015</b>
+
+Edit package.json file (two scripts separated by '|'):
+<b>"scripts": {
+    "start": "browserify src/app.js -o public/app.js -t [ babelify --presets [ es2015 react ] ] | node index.js",
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+},</b>
+
+It's possible watching file changes with nodemon:<b>npm install --save-dev nodemon</b>
+And in package.json:
+"scripts": {
+    "start": "nodemon index.js",
+}
+
+Create index.js file (for nodejs):
+<b>$ echo /*index.js*/ > index.js</b>
+
+Create public subfolder:
+<b>$ mkdir public</b>
+
+Create source subfolder:
+<b>$ mkdir src</b>And create app.js file in src folder
+
+Create empty html file inside public folder:
+<b>$ echo > public/index.html</b>
+
+Create empty app.js file inside src folder (will be transformed into public folder):
+<b>$ echo > src/app.js</b><br />
+
+<b>Steps:
+1.  Create project folder and move in
+2.  $ npm init
+3.  $ npm install express --save
+4.  $ npm install --save react react-dom
+5.  $ npm install --save babelify babel-preset-react babel-preset-es2015
+6.  Correct package.json file (add script):
+"start": "browserify src/app.js -o public/app.js -t [ babelify --presets [ es2015 react ] ] | node index.js",
+7.  Create index.js file (for nodejs)
+8.  Create public folder with index.html file
+9.  Create src folder with app.js file
+10. Launch app: $ npm start
+</b>
+
+</div>
+
+<div class="col-1-3 preformatted">
+<b>Simplest content of a index.js file:</b>
+'use strict';
+var express = require('express')
+var path = require('path')
+var app = express()
+
+app.use(express.static(
+    path.join(__dirname+'/public')
+));
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 
+    'public/index.html'));
+  });
+
+var config = {};
+
+config.PORT = 3030;
+
+var server = app.listen(config.PORT, () => {
+  console.log('Server started on 3030 port at:' + Date());
+});
+
+
+
+<b>Simplest content of a index.html file:</b>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+&lt;/head>
+
+&lt;body>
+    &lt;div id="app">&lt;/div>
+    &lt;script src="app.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+
+
+<b>Content of a src/app.js file:</b>
+'use strict'
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+const App = React.createClass({
+    render: function () {
+        return (
+            &lt;h3>Hello from React Component&lt;/h3>
+        )
+    }
+})
+
+ReactDOM.render(
+  &lt;App />,
+  document.getElementById('App')
+);
+
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus"><b>"Old-fashion ES5 approach: React.createClass"</b></a>
+import React from 'react';
+
+
+<b>const App = React.createClass({
+    render: function() {} // required method
+});</b>
+
+
+var Counter = React.createClass({
+
+  propTypes: {
+    name: React.PropTypes.string
+  },
+
+  getDefaultProps: function () {
+    console.debug('getDefaultProps');
+
+    return {
+        name: 'Counter'
+    };
+  },
+
+  getInitialState: function () {
+    console.debug('getInitialState');
+
+    return {
+      condition: {}
+    };
+
+  },
+
+  componentWillMount: function () {
+    console.debug('componentWillMount');
+  },
+
+  componentDidMount: function () {
+    console.debug('componentDidMount');
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    console.debug('componentWillReceiveProps');
+  },
+
+  shouldComponentUpdate: function () {
+    console.debug('shouldComponentUpdate');
+
+    return true;
+  },
+
+  componentWillUpdate: function (nextProps, nextState) {
+    console.debug('componentWillUpdate');
+  },
+
+  componentDidUpdate: function (prevProps, prevState) {
+    console.debug('componentDidUpdate');
+  },
+
+  componentWillUnmount: function () {
+    console.debug('componentWillUnmount');
+  },
+
+  render: function () {
+    console.debug('render');
+
+    return (
+      &lt;div className="Counter">Counter: {this.props.name} &lt;/div>
+    );
+  }
+});
+
+<a href="https://facebook.github.io/react/docs/react-without-es6.html">
+<b>facebook.github.io/react/docs/react-without-es6.html</b></a>
+</div>
+<div class="col-half preformatted">
+<a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus"><b>"ES6+ class-style: React.Component"</b></a>
+import React from 'react';
+
+
+<b>class App extends React.Component {
+    render() {} // required
+}</b>
+
+
+class Counter React.Component {
+
+  constructor() {
+    console.debug('constructor');
+    super();
+
+    <b>//instead of getInitialState function: </b>
+    this.state = {
+      condition: {}
+    }
+
+    <b>// Operations usually carried out in componentWillMount go here </b>
+  }
+
+  componentWillMount() {
+    console.debug('componentWillMount');
+  }
+
+  componentDidMoun() {
+    console.debug('componentDidMount');
+  }
+
+   componentWillReceiveProps(newProps) {    
+      console.log('Component WILL RECIEVE PROPS!')
+   }
+
+  shouldComponentUpdate(newProps, newState) {
+    console.debug('shouldComponentUpdate');
+    return true;
+  }
+
+  //componentWillUpdate is called just before rendering
+     componentWillUpdate(nextProps, nextState) {
+     console.log('Component WILL UPDATE!');
+   }
+
+    //componentDidUpdate is called just after rendering
+   componentDidUpdate(prevProps, prevState) {
+      console.log('Component DID UPDATE!')
+   }
+
+    componentWillUnmount() {
+      console.log('Component WILL UNMOUNT!')
+   }
+
+  render() {
+    console.debug('render');
+
+    return (
+      &lt;div className="Counter">Counter: {this.props.name} &lt;/div>
+    );
+  }
+}
+
+Counter.propTypes = {
+ name: React.PropTypes.string
+};
+
+<b>//instead of getDefaultProps function: </b>
+Counter.defaultProps = {
+   name: 'Counter'
+}
+
+<a href="http://www.newmediacampaigns.com/blog/refactoring-react-components-to-es6-classes">
+<b>refactoring-react-components-to-es6-classes</b></a>
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus"><b>ES5 way. Property initializers</b></a>
+
+var Video = React.createClass({
+  getDefaultProps: function() {
+    return {
+      autoPlay: false,
+      maxLoops: 10,
+    };
+  },
+  getInitialState: function() {
+    return {
+      loopsRemaining: this.props.maxLoops,
+    };
+  },
+  propTypes: {
+    autoPlay: React.PropTypes.bool.isRequired,
+    maxLoops: React.PropTypes.number.isRequired,
+    posterFrameSrc: React.PropTypes.string.isRequired,
+    videoSrc: React.PropTypes.string.isRequired,
+  },
+});
+</div>
+
+<div class="col-half preformatted">
+<a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus"><b>ES6+ way. Property initializers</b></a>
+
+class Video extends React.Component {
+  static defaultProps = {
+    autoPlay: false,
+    maxLoops: 10,
+  }
+  static propTypes = {
+    autoPlay: React.PropTypes.bool.isRequired,
+    maxLoops: React.PropTypes.number.isRequired,
+    posterFrameSrc: React.PropTypes.string.isRequired,
+    videoSrc: React.PropTypes.string.isRequired,
+  }
+  state = {
+    loopsRemaining: this.props.maxLoops,
+  }
+}
+
+<b>//or another approach:</b>
+class Video extends React.Component {
+    constructor() {
+        super(); 
+        this.state = {
+            loopsRemaining: this.props.maxLoops,
+        }
+    }   
+}
+Video.propTypes = {
+    autoPlay: React.PropTypes.bool.isRequired,
+    maxLoops: React.PropTypes.number.isRequired,
+    posterFrameSrc: React.PropTypes.string.isRequired,
+    videoSrc: React.PropTypes.string.isRequired,
+};
+Video.defaultProps = {
+    autoPlay: false,
+    maxLoops: 10,
+}
+
+</div>
+
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<b>Custom methods and Event handlers
+"Old-fashion approach: React.createClass"</b>
+
+var ExampleComponent = React.createClass({
+    handleClick: function(e) {
+        console.log(e.target);
+    }
+     render: function() { 
+        return &lt;div onClick={this.handleClick}>Hello, world. &lt;/div>;
+    },
+});
+</div>
+
+<div class="col-half preformatted">
+<b>Custom methods and Event handlers
+"ES6 class-style: React.Component"</b>
+
+<b>//1st approach: binding method in constructor</B>
+class ExampleComponent extends React.Component {
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+    }
+    render() { 
+        return &lt;div onClick={this.handleClick}>Hello, world. &lt;/div>;
+    }
+    handleClick(e) {
+        console.log(e.target); 
+    }
+}
+
+<b>//2nd approach: binding methods in property is anti-pattern.
+If you would like to use handleChange method in another components in the same class you need to add binding twice. Another problem is ESLint with Airbnb configuration won’t agree to bind your methods in props.
+</b>
+class ExampleComponent extends React.Component {
+    render() { 
+        return &lt;div onClick={this.handleClick.bind(this)}>Hello, world. &lt;/div>;
+    }
+    handleClick(e) {
+        console.log(e.target); 
+    }
+}
+
+<b>//3rd approach: </b>
+function bind(obj, ...methods) {
+    methods.forEach( (method) => obj[method] = obj[method].bind(obj) );
+}
+
+//And use it:
+bind(this, "onClick", "onSubmit", "onEverythingElse");
+
+<b>//4th (the best) approach: arrow function </b>
+class ExampleComponent extends React.Component {
+    render() { 
+        return &lt;div onClick={this.handleClick}>Hello, world. &lt;/div>;
+    }
+    handleClick =(e) => {
+        console.log(e.target); 
+    }
+}
+
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<b>Child context.
+"Old-fashion approach: React.createClass"</b>
+
+var MessagesApp = React.createClass({
+    childContextTypes: {
+        users: PropTypes.array.isRequired,
+    },
+    /* Global context implementation */
+    getChildContext: function() {
+        return {
+            users: [] /* this.getUsers() */
+        }
+    },
+    render() { ... }
+});
+
+const ChatMessage = React.createClass({
+    /* Child context definition */
+    contextTypes: {
+        users: PropTypes.array.isRequired,
+    },
+    render: function() {
+        return (
+            {this.context.users.map(
+                (u, idx) => ( &lt; List key={idx} user={u} /> )
+            )}
+        )
+    }
+});
+</div>
+<div class="col-half preformatted">
+<a href="https://medium.com/react-ecosystem/how-to-handle-react-context-a7592dfdcbc#.mvzlpu7sk"><b>Child context.
+"ES6 class-style: React.Component"</b></a>
+
+<b>/* ES6 class ContextProvider component */</b>
+class ContextProvider extends React.Component {
+
+  static childContextTypes = {
+    currentUser: React.PropTypes.object
+  };
+
+  getChildContext() {
+    return {currentUser: this.props.currentUser};
+  }
+  
+  render() {
+    return(...); 
+  }
+}
+
+<b>/* ES6 class ContextConsumer component */</b>
+class ContextConsumer extends React.Component {
+  /* 
+     contexTypes is a required static property to declare 
+     what you want from the context
+  */
+  static contextTypes = {
+      currentUser: React.PropTypes.object
+  };
+  render() {
+    const {currentUser} = this.context;
+    return &lt;div>{currentUser.name} &lt;/div>;
+  }
+}
+
+<b>/* ES6 class component with an overwritten constructor */</b>
+class ContextConsumer extends React.Component {
+  static contextTypes = {
+      currentUser: React.PropTypes.object
+  };
+  constructor(props, context) {
+    super(props, context);
+    ...
+  }
+  render() {
+    const {currentUser} = this.context;
+    return &lt;div>{currentUser.name} &lt;/div>;
+  }
+}
+
+<b>/* Functional stateless component */</b>
+const ContextConsumer = (props, context) => (
+  &lt;div>{context.currentUser.name} &lt;/div>
+);
+ContextConsumer.contextTypes = {
+  currentUser: React.PropTypes.object
+};
+
+<a href="https://facebook.github.io/react/docs/context.html"><b>//facebook.github.io/react/docs/context.html</b></a>
+const Button = ({children}, context) =>
+  &lt;button style={{background: context.color}}>
+    {children}
+  &lt;/button>;
+Button.contextTypes = {color: React.PropTypes.string};
+
+<b>//component’s lifecycle methods:</b>
+constructor(props, context) { super(props, context); ...}
+componentWillReceiveProps(nextProps, nextContext) {...}
+shouldComponentUpdate(nextProps, nextState, nextContext) {...}
+componentWillUpdate(nextProps, nextState, nextContext) {...}
+componentDidUpdate(previousProps, previousContext) {...}
+</div>
+</div>
+
+<div class="flex-row">
+<div class="col-half preformatted">
+<b>/* Conditional expressions */</b>
+&lt;Menu>
+  {userLevel === 'admin' &amp;&amp; renderAdminMenu() }
+&lt;/Menu>
+
+&lt;Menu>
+  {adminLevel ? renderAdminMenu() : renderUserMenu() }
+&lt;/Menu>
+
+//use the ternary operator to render one component or another:
+const Menu = ( &lt;ul>{loggedInUser ? &lt;UserMenu /> : &lt;LoginLink />} &lt;/ul> )
+</div>
+<div class="col-half preformatted">
+<a href="https://facebook.github.io/react/docs/react-component.html#forceupdate"><b>this.forceUpdate()</b></a>
+Calling forceUpdate() will cause render() to be called on the component, skipping shouldComponentUpdate().
+
+<a href="http://codepen.io/SyedAfrozPasha/pen/YWJwpy"><b>codepen.io React example forceUpdate()</b></a>
+
+/* Component API */
+// forceUpdate()
+
+class App extends React.Component{
+
+  forceUpdateHandler = () => {
+    this.forceUpdate();
+  };
+  
+  render(){
+    return(
+      &lt;div>
+        &lt;button onClick= {this.forceUpdateHandler} >FORCE UPDATE &lt;/button>
+        &lt;h4>Random Number : { Math.random() } &lt;/h4>
+      &lt;/div>
+    );
+  }
+}
+
+ReactDOM.render(&lt;App />, document.getElementById('app'));
+</div>
+</div>
+
+</div>
+    <script type="text/babel" src="app-01.jsx"></script>
+    <script type="text/javascript" src="/static/js/main.3e875b7c.js"></script>
+</body>
+
+</html>
