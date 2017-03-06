@@ -9,12 +9,7 @@ div {
 a {
     text-decoration: none;
 }
-b {
-    color: lightskyblue; /* #cafff0; */
-}
-a:hover, a:hover * {
-    color: white;
-}
+
 .container {
     /* margin:20px; */
 }
@@ -24,13 +19,13 @@ a:hover, a:hover * {
 [class*='col-'] {
     padding:10px;
 }
-.col-half {
-    width: 50%;
-    float: left;
-}
 .col-full {
     width: 100%;
     clear: both;
+}
+.col-half {
+    width: 50%;
+    float: left;
 }
 .col-2-3 {
     width: 66.666%;
@@ -59,6 +54,28 @@ a:hover, a:hover * {
     /* white-space: pre; */
     white-space: pre-wrap;
     unicode-bidi: embed; 
+} 
+.black-bg {
     color: #aad6d1; /* #e6e7e8; */
     background-color: #000;
-} 
+}
+.black-bg a:hover, 
+.black-bg a:hover * {
+    color: white;
+}
+.black-bg b {
+    color: lightskyblue; /* #cafff0; */
+}
+.gray-bg {
+    color: #d7dee8;
+    background: #62656a;
+}
+.gray-bg b {
+    color: #f8e5c1; /* #ecf4ff #cafff0; */
+    text-shadow: 2px 2px 5px #343434;
+}
+.app-box {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 5px;
+}
